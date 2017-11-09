@@ -77,7 +77,7 @@ mTimer.schedule(new TimerTask() {
 
 3.在学习使用**autobahn**的WebSocket的过程中，查阅资料发现网上的用法基本一致：都是创建一个Service，然后在Service中利用WebSocketConnection建立长连接进行通信，获取到服务器推送的消息之后，利用接口回调的方式或者利用EventBus等将消息传递给Activity，这种方式使用比较麻烦，而且有时候会涉及到Service的保活问题。
 
-原因：之所以使用这种方式，说是因为在Activity中使用连接会断开，但是经过本人测试，在Activity中使用并未发现连接断开的问题，所以不推荐使用建立Service的方式，而推荐直接在Activity中建立连接，此外推荐在子线程中利用WebSocketConnection进行相关操作，主要是担心会阻塞主线程，但是其实并不会，原因看WebSocketConnection的代码。
+原因：之所以使用这种方式，说是因为在Activity中使用连接会断开，但是经过本人测试，在Activity中使用并未发现连接断开的问题，所以不推荐使用建立Service的方式，而推荐直接在Activity中建立连接，此外推荐在子线程中利用WebSocketConnection进行相关操作，主要是担心会阻塞主线程（最初遇到过问题，但是后来又测试发现没问题，所以不确定）。
 
 4.在子线程中使用WebSocketConnection建立连接，出错。
 
@@ -88,6 +88,6 @@ mTimer.schedule(new TimerTask() {
 在使用过程中还**没有解决的问题：**
 
 1. 断开连接的时候onClose方法并不会被调用，原因未知，如果不回调onClose方法，怎么做断线重连。
-2. WebSocketConnection是否会阻塞主线程，代码没看懂。
+2. WebSocketConnection是否会阻塞主线程，是否可以在主线程中使用，代码没看懂，最初遇到过问题，但是后来又试的时候，发现没有问题，目前不确定。
 3. 为什么一定要在具有Looper的线程中才能调用WebSocketConnection的相关方法。
 4. 为什么不发送消息连接就会断开。
