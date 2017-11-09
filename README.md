@@ -85,7 +85,7 @@ mTimer.schedule(new TimerTask() {
 
 在WebSocketClient内部利用HandlerThread和Handler将WebSocketConnection的相关操作都放置到一个HandlerThread中执行，方便了开发者使用，具体的实现细节见代码。
 
-在使用过程中还**没有解决的问题：**
+在使用autobahn过程中还**没有解决的问题：**
 
 1. 断开连接的时候onClose方法并不会被调用，原因未知，如果不回调onClose方法，怎么做断线重连。
 2. WebSocketConnection是否会阻塞主线程，是否可以在主线程中使用，代码没看懂，最初遇到过问题，但是后来又试的时候，发现没有问题，目前不确定。
