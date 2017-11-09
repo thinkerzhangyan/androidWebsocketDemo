@@ -17,7 +17,7 @@ mWebSocketClient.disconnectFromRoom(true);
 //发送消息
 mWebSocketClient.sendMessage("我是消息");
 
-// WebSocketClient.WebSocketClientEvents接口中的方法，会在WebSocketClient中回调，每个方//法的具体含义参照代码注释
+// WebSocketClient.WebSocketClientEvents接口中的方法，会在WebSocketClient中回调，每个方法的具体含义参照代码注释
 private class MySocketClientEvents implements WebSocketClient.WebSocketClientEvents {
         @Override
         public void onWebSocketMessage(final String msg) {
