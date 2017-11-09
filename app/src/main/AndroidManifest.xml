@@ -22,8 +22,6 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".WebSocketService"/>
-
     </application>
 
 </manifest>
