@@ -1,6 +1,6 @@
 # Android WebSocket Demo
 
-Android使用websocket创建长连接实现推送的一个简单的[Demo][1]。Demo中使用了autobahn这个开源库，基本操作都在WebSocketClient这个类中，这个类根据项目中的业务需求对**autobahn**的jar包中的WebSocketConnection方法进行了简单的封装。
+项目中使用到了WebSocket，特地抽取成一个简单的[Demo][1]供大家学习。Demo中使用了autobahn这个开源库，基本操作都在WebSocketClient这个类中，这个类根据项目中的业务需求对**autobahn**的WebSocketConnection中的方法进行了简单的封装。这个封装是根据自己项目中的业务需求进行封装的，所以如果不适用于自己的项目的话，可以自己重新对**autobahn**中的WebSocketConnection中的方法进行封装。但是仍然可以通过这个Demo学习**autobahn**的使用。
 
 ## 使用示范
 
